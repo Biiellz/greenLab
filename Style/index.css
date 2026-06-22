@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -11,6 +11,21 @@ body {
     background-color: #0b0b0b;
     color: #fff;
     overflow-x: hidden;
+}
+
+h1, h2, h3, .logo, h1 span, h2 span, .logo span{
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.hero-content h1 {
+    color: #D7A335;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 /* --- NAVBAR --- */
@@ -30,7 +45,7 @@ header {
 header.sticky {
     background: rgba(11, 11, 11, 0.95);
     padding: 15px 50px;
-    border-bottom: 1px solid #ff3e3e;
+    border-bottom: 1px solid #D7A335;
     backdrop-filter: blur(10px);
 }
 
@@ -43,7 +58,7 @@ header.sticky {
 }
 
 .logo span {
-    color: #ff3e3e;
+    color: #D7A335;
 }
 
 .nav-menu {
@@ -52,17 +67,19 @@ header.sticky {
 }
 
 .nav-menu li a {
+    font-family: 'Playfair Display', serif;
     color: #fff;
     text-decoration: none;
     margin-left: 30px;
-    font-weight: 500;
+    font-weight: 700;
     transition: 0.3s;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 15px;
+    letter-spacing: 0.0px;
 }
 
 .nav-menu li a:hover, .nav-menu li a.active {
-    color: #ff3e3e;
+    color: #D7A335;
 }
 
 .menu-toggle {
@@ -82,16 +99,39 @@ header.sticky {
 }
 
 #home {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1616788494707-ec28f08d05a1?q=80&w=1920');
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 0 10%;
+    overflow: hidden;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+    z-index: 2;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 3;
     max-width: 600px;
     opacity: 0;
     transform: translateY(30px);
@@ -107,7 +147,7 @@ header.sticky {
 }
 
 .hero-content h1 span {
-    color: #ff3e3e;
+    color: #D7A335;
 }
 
 .hero-content p {
@@ -116,13 +156,14 @@ header.sticky {
     color: #ccc;
 }
 
+/* Botão Premium Dourado */
 .btn {
     display: inline-block;
-    background: #ff3e3e;
-    color: #fff;
+    background: #D7A335;
+    color: #0b0b0b;
     padding: 12px 35px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     border-radius: 4px;
     letter-spacing: 1px;
@@ -132,8 +173,9 @@ header.sticky {
 
 .btn:hover {
     background: transparent;
-    border-color: #ff3e3e;
-    box-shadow: 0 0 15px #ff3e3e;
+    color: #D7A335;
+    border-color: #D7A335;
+    box-shadow: 0 0 15px rgba(215, 163, 53, 0.4);
 }
 
 /* --- SEÇÃO SOBRE --- */
@@ -149,11 +191,11 @@ header.sticky {
     position: relative;
 }
 
-.section-title ::after {
+.section-title::after {
     content: '';
     width: 80px;
-    height: 4px;
-    background: #ff3e3e;
+    height: 3px;
+    background: #D7A335;
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -195,7 +237,7 @@ header.sticky {
     transform: scale(1.05);
 }
 
-/* --- SEÇÃO SERVIÇOS (CARDS DINÂMICOS) --- */
+/* --- SEÇÃO SERVIÇOS --- */
 #servicos {
     background: #111;
 }
@@ -218,13 +260,13 @@ header.sticky {
 
 .card:hover {
     transform: translateY(-10px);
-    border-color: #ff3e3e;
-    box-shadow: 0 10px 20px rgba(255, 62, 62, 0.1);
+    border-color: #D7A335;
+    box-shadow: 0 10px 20px rgba(215, 163, 53, 0.1);
 }
 
 .card-icon {
     font-size: 40px;
-    color: #ff3e3e;
+    color: #D7A335;
     margin-bottom: 20px;
 }
 
@@ -240,9 +282,16 @@ header.sticky {
     line-height: 1.6;
 }
 
-/* --- SEÇÃO MEIO PARALLAX (CHAMADA) --- */
+.card.selected {
+    border-color: #D7A335;
+    background: #16130c;
+    box-shadow: 0 0 15px rgba(215, 163, 53, 0.2);
+    transform: scale(1.02);
+}
+
+/* --- SEÇÃO MEIO PARALLAX --- */
 .middle-parallax {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=1920');
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/media/Captura\ de\ tela\ 2026-06-22\ 194309.png');
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -270,12 +319,31 @@ header.sticky {
 .contact-info h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #ff3e3e;
+    color: #D7A335;
 }
 
 .contact-info p {
     margin-bottom: 15px;
     color: #ccc;
+}
+
+/* Container do Mapa */
+.map-container {
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.map-container:hover {
+    border-color: #D7A335;
+    box-shadow: 0 0 15px rgba(215, 163, 53, 0.1);
+}
+
+.map-container iframe {
+    display: block;
+    filter: grayscale(1) invert(0.9) contrast(1.2);
 }
 
 form {
@@ -290,7 +358,7 @@ form {
     gap: 20px;
 }
 
-input, textarea, select {
+input, textarea {
     width: 100%;
     padding: 15px;
     background: #111;
@@ -301,8 +369,8 @@ input, textarea, select {
     transition: 0.3s;
 }
 
-input:focus, textarea:focus, select:focus {
-    border-color: #ff3e3e;
+input:focus, textarea:focus {
+    border-color: #D7A335;
 }
 
 textarea {
@@ -328,7 +396,7 @@ footer {
     }
 }
 
-/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 968px) {
     header {
         padding: 20px 30px;
@@ -372,7 +440,6 @@ footer {
         flex-direction: column;
         gap: 20px;
     }
-    /* Desativa parallax real no mobile para melhor performance buster */
     .parallax-bg {
         background-attachment: scroll;
     }

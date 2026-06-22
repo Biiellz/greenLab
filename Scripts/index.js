@@ -21,7 +21,15 @@ document.querySelectorAll('.nav-menu li a').forEach(link => {
     });
 });
 
-// 3. Highlight Dinâmico no menu conforme o Scroll da página
+// 3. Seleção Múltipla dos Cards de Serviços
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('selected');
+    });
+});
+
+// 4. Highlight Dinâmico no menu conforme o Scroll da página
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-menu li a');
 
@@ -29,7 +37,6 @@ window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (pageYOffset >= (sectionTop - 200)) {
             current = section.getAttribute('id');
         }
@@ -43,38 +50,46 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// 4. Manipulação do Formulário e Envio para o WhatsApp
+// 5. Manipulação do Formulário e Envio para o WhatsApp
 document.getElementById('appointment-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Impede o recarregamento da página
+    e.preventDefault(); 
 
-    // Exemplo: 55 + DDD + Número. Se for de Brasília (61) 99999-9999 fica: 5561999999999
-    const numeroWhatsApp = "5561999117396"; 
+    const numeroWhatsApp = "5561995411862"; 
 
-    // 2. Captura os dados dos campos dinamicamente
+    // Captura os dados textuais dos inputs
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const car = document.getElementById('car').value;
-    const service = document.getElementById('service-select').value;
     const message = document.getElementById('message').value;
 
-    // 3. Monta a mensagem formatada com quebras de linha (%0A)
+    // Coleta dinamicamente os títulos (h3) de todos os cards com a classe '.selected'
+    const cardsSelecionados = document.querySelectorAll('.card.selected h3');
+    const servicosEscolhidos = Array.from(cardsSelecionados).map(h3 => h3.textContent);
+
+    // Validação obrigatória dos cards
+    if (servicosEscolhidos.length === 0) {
+        alert("Por favor, selecione pelo menos um serviço clicando nos nossos cards de serviços acima antes de enviar!");
+        return;
+    }
+
+    const listaServicos = servicosEscolhidos.join(', ');
+
+    // Monta a mensagem formatada para o WhatsApp
     let textoMensagem = `Olá, gostaria de agendar um serviço!%0A%0A`;
     textoMensagem += `*Nome:* ${name}%0A`;
     textoMensagem += `*WhatsApp:* ${phone}%0A`;
     textoMensagem += `*Veículo:* ${car}%0A`;
-    textoMensagem += `*Serviço:* ${service}%0A`;
+    textoMensagem += `*Serviços Selecionados:* ${listaServicos}%0A`;
     
-    // Se o cliente digitou uma mensagem opcional, adiciona no texto
     if (message.trim() !== "") {
         textoMensagem += `*Observações:* ${message}`;
     }
 
-    // 4. Gera o link final da API do WhatsApp
     const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${textoMensagem}`;
 
-    // 5. Abre em uma nova aba o WhatsApp do cliente com a mensagem pronta
     window.open(linkWhatsApp, '_blank');
 
-    // Opcional: Limpa o formulário após o disparo
+    // Reseta o form e remove as marcações visuais douradas dos cards
     this.reset();
+    cards.forEach(card => card.classList.remove('selected'));
 });
