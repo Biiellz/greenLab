@@ -21,15 +21,7 @@ document.querySelectorAll('.nav-menu li a').forEach(link => {
     });
 });
 
-// 3. Seleção Múltipla dos Cards de Serviços
-const cards = document.querySelectorAll('.card');
-cards.forEach(card => {
-    card.addEventListener('click', () => {
-        card.classList.toggle('selected');
-    });
-});
-
-// 4. Highlight Dinâmico no menu conforme o Scroll da página
+// 3. Highlight Dinâmico no menu conforme o Scroll da página
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-menu li a');
 
@@ -50,7 +42,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// 5. Manipulação do Formulário e Envio para o WhatsApp
+// 4. Manipulação do Formulário e Envio para o WhatsApp
 document.getElementById('appointment-form').addEventListener('submit', function(e) {
     e.preventDefault(); 
 
@@ -62,13 +54,15 @@ document.getElementById('appointment-form').addEventListener('submit', function(
     const car = document.getElementById('car').value;
     const message = document.getElementById('message').value;
 
-    // Coleta dinamicamente os títulos (h3) de todos os cards com a classe '.selected'
-    const cardsSelecionados = document.querySelectorAll('.card.selected h3');
-    const servicosEscolhidos = Array.from(cardsSelecionados).map(h3 => h3.textContent);
+    // Busca apenas os quadradinhos que foram checados/marcados pelo cliente
+    const checkboxesMarcados = document.querySelectorAll('input[name="servicos"]:checked');
+    
+    // Transforma os elementos em uma lista de textos baseada no "value" de cada input marcado
+    const servicosEscolhidos = Array.from(checkboxesMarcados).map(checkbox => checkbox.value);
 
-    // Validação obrigatória dos cards
+    // Validação obrigatória: se nenhuma caixinha foi marcada, avisa o usuário
     if (servicosEscolhidos.length === 0) {
-        alert("Por favor, selecione pelo menos um serviço clicando nos nossos cards de serviços acima antes de enviar!");
+        alert("Por favor, selecione pelo menos um serviço nos quadradinhos antes de enviar!");
         return;
     }
 
@@ -91,5 +85,4 @@ document.getElementById('appointment-form').addEventListener('submit', function(
 
     // Reseta o form e remove as marcações visuais douradas dos cards
     this.reset();
-    cards.forEach(card => card.classList.remove('selected'));
 });

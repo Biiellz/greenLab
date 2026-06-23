@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Damásio | Estética Automotiva</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="media/IconDamasio.png" type="image/x-icon">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,8 +66,8 @@
     </div>
     <div class="card">
         <div class="card-icon">🛡️</div>
-        <h3>Vitrificação 9H</h3>
-        <p>Camada cerâmica de altíssima resistência contra raios UV, fezes de aves e agentes químicos.</p>
+        <h3>Vitrificação <span>9</span>H</h3>
+        <p>Camada cerâmica de altíssima resistência contra raios UV e agentes químicos.</p>
     </div>
     <div class="card">
         <div class="card-icon">🧽</div>
@@ -125,22 +125,66 @@
             </div>
 
             <form id="appointment-form">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Seu Nome" required>
-                    <input type="tel" id="phone" placeholder="Seu WhatsApp" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="car" placeholder="Modelo do Carro (Ex: Civic 2023)" required>
-                </div>
-                <textarea id="message" placeholder="Mensagem ou observações adicionais..."></textarea>
-                <button type="submit" class="btn">Enviar Solicitação</button>
-            </form>
+    <div class="form-group">
+        <input type="text" id="name" placeholder="Seu Nome" required>
+        <input type="tel" id="phone" placeholder="Seu WhatsApp" required>
+    </div>
+    <div class="form-group">
+        <input type="text" id="car" placeholder="Modelo do Carro (Ex: Civic 2023)" required>
+    </div>
+
+    <!-- SEÇÃO DE QUADRADINHOS (CHECKBOXES) ADICIONADA -->
+    <div class="services-checkboxes">
+        <p class="checkboxes-title">Selecione os Serviços Desejados:</p>
+        <div class="checkbox-grid">
+            <label class="checkbox-item">
+                <input type="checkbox" name="servicos" value="Pintura Geral">
+                <span>Pintura Geral</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="servicos" value="Polimento Técnico">
+                <span>Polimento Técnico</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="servicos" value="Vitrificação 9H">
+                <span>Vitrificação 9H</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="servicos" value="Higienização Interna">
+                <span>Higienização Interna</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="servicos" value="Lavagem Detalhada">
+                <span>Lavagem Detalhada</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="servicos" value="Estética de Plásticos/Couro">
+                <span>Estética de Plásticos e Couro</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="servicos" value="Limpeza de Motor">
+                <span>Limpeza Técnica de Motor</span>
+            </label>
+            <label class="checkbox-item">
+                <input type="checkbox" name="servicos" value="Higienização Completa">
+                <span>Higienização Completa</span>
+            </label>
+        </div>
+    </div>
+
+    <textarea id="message" placeholder="Mensagem ou observações adicionais..."></textarea>
+    <button type="submit" class="btn">Enviar Solicitação</button>
+</form>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Damásio Estética Automotiva. Todos os direitos reservados.</p>
-    </footer>
+    <div class="social-links" style="margin-bottom: 15px;">
+        <a href="https://www.instagram.com/damasio.estetica/" target="_blank" style="color: #D7A335; text-decoration: none; margin: 0 10px; font-weight: bold;">Instagram</a>
+        <a href="#contato" style="color: #fff; text-decoration: none; margin: 0 10px;">Contato</a>
+    </div>
+    <p>© 2026 Damásio Estética Automotiva. Todos os direitos reservados.</p>
+</footer>
     
     <script src="Scripts/index.js"></script>
 </body>
