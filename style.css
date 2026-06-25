@@ -145,7 +145,7 @@ body {
 #conceito4 { 
     min-height: 100vh;
     padding: 80px 20px;
-    background: #08090a; 
+    background-image: url('media/BackGround.png'); 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -190,7 +190,7 @@ body {
 
 /* CONCEITO 3: ESTÚDIOS */
 #conceito3 { 
-    background: #08090a;
+    background-image: url('media/BackGround.png');
     padding: 80px 20px;
     display: flex;
     flex-direction: column;
