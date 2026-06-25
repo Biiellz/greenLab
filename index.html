@@ -3,189 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damásio | Estética Automotiva</title>
-    <link rel="shortcut icon" href="media/IconDamasio.png" type="image/x-icon">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="Style/index.css">
+    <title>greenLab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;700&family=Syne:wght@700;800&family=Unbounded:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header id="navbar">
-        <a href="#" class="logo"><span>Damasio</span></a>
-        <div class="menu-toggle" id="mobile-menu">☰</div>
-        <ul class="nav-menu">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Agendamento</a></li>
-        </ul>
-    </header>
+    <div class="floating-frame frame-1">
+        <img src="media/Estatua.jpg" alt="Grafite Detalhe">
+    </div>
+    <div class="floating-frame frame-2">
+        <img src="media/AfroKinda.jpg" alt="Street Art">
+    </div>
+    <div class="floating-frame frame-3">
+        <img src="media/StudioDamasio.jpg">
+    </div>
+    <div class="floating-frame frame-4">
+        <img src="media/StudioTattoo.jpg" alt="Cultura de Rua">
+    </div>
+    <div class="floating-frame frame-5">
+        <img src="media/StudioAfro.jpg" alt="Cultura de Rua">
+    </div>
 
-    <section id="home" class="parallax-bg">
-        <video autoplay loop muted playsinline class="video-bg">
-            <source src="media/Damasio-video.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos em HTML5.
-        </video>
+    <div class="greenlab-sidebar sidebar-left"></div>
 
-        <div class="hero-content">
-            <h1><span>Estética Automotiva</span></h1>
-            <p>Seu veículo tratado com alta tecnologia, produtos importados e o cuidado que ele realmente merece. Brilho extremo e proteção duradoura.</p>
-            <a href="#contato" class="btn">Agendar Horário</a>
-        </div>
-    </section>
+    <div class="greenlab-sidebar sidebar-right"></div>
 
-    <section id="sobre" class="section">
-        <h2 class="section-title">Quem Somos</h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p>Na Damásio, não fazemos apenas uma limpeza. Nós elevamos o visual e a proteção do seu patrimônio através de processos detalhados e minuciosos.</p>
-                <p>Utilizamos tecnologia de ponta e os melhores compostos mundiais para garantir que cada curva do seu carro reflita a nossa paixão pela perfeição.</p>
+    <main class="site-container">
+
+        <section id="conceito4">
+            <div class="control-panel">
+                <a href="#damasio-target" class="mood-btn-link">Damasio | Estetica</a>
+                <a href="#tattoo-target" class="mood-btn-link">Yellow.Ink | Tatuagens</a>
+                <a href="#afro-target" class="mood-btn-link">Brooklyn Afro | Cabeleleiro</a>
             </div>
-            <div class="about-img">
-                <a href="#contato"><img src="media/Captura de tela 2026-06-22 184347.png" alt="Polimento Automotivo"></a>
+        
+            <div class="dynamic-showcase">
+                <div class="ds-img">
+                    <img id="ds-foto" src="media/StudioGreenLab.jpg" alt="greenLab Padrao">
+                </div>
+                <div class="ds-content">
+                    <p style="font-size: 0.75rem; letter-spacing: 3px; color: #666; margin-bottom: 5px;">MURAL DO GALPÃO</p>
+                    <h2 id="ds-titulo" style="color: #00ff66;">greenLAB</h2>
+                    <p id="ds-texto">A greenLab não é apenas um space físico; somos um ecossistema vivo. Uma sociedade de mentes criativas feita para abrigar, potencializar e conectar o topo da cultura, da estética e da identidade autêntica.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="parallax-section" style="background-image: url('media/AlefCortando3.jpg');">
+            <div class="parallax-content">
+                <h3>QUEM SOMOS</h3>
+                <p>A greenLab nasceu da necessidade de criar um território livre para os nossos. Somos uma aliança de criadores, uma marca que bota o bloco gerencia o ambiente onde o topo da cultura urbana acontece.</p>
             </div>
         </div>
-    </section>
 
-    <section id="servicos" class="section">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <div class="services-grid">
-    <div class="card">
-        <div class="card-icon">🎨</div>
-        <h3>Pintura Geral</h3>
-        <p>Renovação completa da estética externa, utilizando tintas de alta tecnologia e cabine pressurizada para um acabamento de fábrica.</p>
-    </div>
-    <div class="card">
-        <div class="card-icon">✨</div>
-        <h3>Polimento Técnico</h3>
-        <p>Remoção de riscos, microrriscos e holografias, devolvendo o brilho original da pintura.</p>
-    </div>
-    <div class="card">
-        <div class="card-icon">🛡️</div>
-        <h3>Vitrificação <span>9</span>H</h3>
-        <p>Camada cerâmica de altíssima resistência contra raios UV e agentes químicos.</p>
-    </div>
-    <div class="card">
-        <div class="card-icon">🧽</div>
-        <h3>Higienização Interna</h3>
-        <p>Limpeza profunda de bancos, carpetes e teto, com eliminação de 99.9% de bactérias e fungos.</p>
-    </div>
-    <div class="card">
-        <div class="card-icon">🚿</div>
-        <h3>Lavagem Detalhada</h3>
-        <p>Limpeza minuciosa com remoção de contaminantes, lavagem de caixas de roda e aplicação de cera nobre.</p>
-    </div>
-    <div class="card">
-        <div class="card-icon">🧴</div>
-        <h3>Estética de Plásticos e Couro</h3>
-        <p>Nutrição profunda das superfícies, devolvendo o aspecto original de novo e prevenindo contra ressecamento.</p>
-    </div>
-    <div class="card">
-        <div class="card-icon">⚙️</div>
-        <h3>Limpeza Técnica de Motor</h3>
-        <p>Remoção de graxas com produtos dielétricos e pincéis, finalizada com verniz protetor de alta temperatura.</p>
-    </div>
-    <div class="card">
-        <div class="card-icon">💎</div>
-        <h3>Higienização Completa</h3>
-        <p>O tratamento definitivo para o interior do veículo, unindo a limpeza profunda à eliminação completa de odores.</p>
-    </div>
-</div>
-    </section>
-
-    <section class="middle-parallax parallax-bg">
-        <h2>Pronto para ver seu carro como novo?</h2>
-        <a href="#contato" class="btn">Solicitar Orçamento</a>
-    </section>
-
-    <section id="contato" class="section">
-        <h2 class="section-title">Agende seus Detalhes</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Venha nos visitar</h3>
-                <p>📍 St. L Norte QNL 23 - Taguatinga Norte, Brasília - DF, 72152-310</p>
-                <p>📞 5561995411862</p>
-                <p>⏰ Seg a Sáb: 08h às 18h | Dom: 09h às 13h</p>
-
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.811629857802!2d-48.093134!3d-15.8138835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcd1c52263d67%3A0x673c63d5e11bfb43!2sDam%C3%A1sio%20Est%C3%A9tica%20e%20Lavagem%20de%20Ve%C3%ADculos!5e0!3m2!1spt-BR!2sbr!4v1782169667131!5m2!1spt-BR!2sbr" 
-                        width="100%" 
-                        height="250" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+        <section id="conceito3">
+            <div id="damasio-target" class="cine-row row-damasio">
+                <div class="cine-media">
+                    <img src="media/Jefferson.jpg" alt="Damasio Estética">
+                </div>
+                <div class="cine-text-side">
+                    <div class="play-indicator"><span></span> ESTÚDIO 01 / <a href="media/StudioDamasio.jpg" target="_blank">@damasio.estetica</a></div>
+                    <h2>DAMASIO <span>Estética automotiva</span></h2>
+                    <p>Nós trazemos o requinte avançado para o centro do concreto industrial da greenLab. Tratamentos de pintura de elite, correção de verniz milimétrica e vitrificação de alta performance. Não limpamos carros; blindamos o seu patrimônio com técnicas de simetria que beiram a obsessão.</p>
+                    <hr style="border-color: #222; margin-bottom: 25px;">
+                    <a href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá!%20Estou%20no%20site%20da%20greenLab%20e%20gostaria%20de%20agendar%20um%20serviço%20de%20estética%20com%20a%20Damasio." target="_blank" class="wpp-btn btn-damasio">
+                        AGENDAR VIA WHATSAPP
+                    </a>
                 </div>
             </div>
 
-            <form id="appointment-form">
-    <div class="form-group">
-        <input type="text" id="name" placeholder="Seu Nome" required>
-        <input type="tel" id="phone" placeholder="Seu WhatsApp" required>
-    </div>
-    <div class="form-group">
-        <input type="text" id="car" placeholder="Modelo do Carro (Ex: Civic 2023)" required>
-    </div>
+            <div id="tattoo-target" class="cine-row row-yellowink">
+                <div class="cine-media">
+                    <img src="media/TasPB.jpg" alt="Tatuadesson">
+                </div>
+                <div class="cine-text-side">
+                    <div class="play-indicator"><span></span> ESTÚDIO 02 / <a href="https://www.instagram.com/tatuadesson/" target="_blank">@tatuadesson</a></div>
+                    <h2>Yellow.Ink</h2>
+                    <p>nosso estúdio é um santuário para quem entende que tatuagem é identidade, não adereço. Do traço fino e cirúrgico à agressividade do blackwork, cada sessão aqui é um ritual de afirmação.</p>
+                    <hr style="border-color: #222; margin-bottom: 25px;">
+                    <a href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá!%20Estou%20no%20site%20da%20greenLab%20e%20gostaria%20de%20agendar%20uma%20sessão%20de%20tattoo%20com%20o%20Tatuadesson." target="_blank" class="wpp-btn btn-yellowink">
+                        AGENDAR VIA WHATSAPP
+                    </a>
+                </div>
+            </div>
 
-    <!-- SEÇÃO DE QUADRADINHOS (CHECKBOXES) ADICIONADA -->
-    <div class="services-checkboxes">
-        <p class="checkboxes-title">Selecione os Serviços Desejados:</p>
-        <div class="checkbox-grid">
-            <label class="checkbox-item">
-                <input type="checkbox" name="servicos" value="Pintura Geral">
-                <span>Pintura Geral</span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox" name="servicos" value="Polimento Técnico">
-                <span>Polimento Técnico</span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox" name="servicos" value="Vitrificação 9H">
-                <span>Vitrificação 9H</span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox" name="servicos" value="Higienização Interna">
-                <span>Higienização Interna</span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox" name="servicos" value="Lavagem Detalhada">
-                <span>Lavagem Detalhada</span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox" name="servicos" value="Estética de Plásticos/Couro">
-                <span>Estética de Plásticos e Couro</span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox" name="servicos" value="Limpeza de Motor">
-                <span>Limpeza Técnica de Motor</span>
-            </label>
-            <label class="checkbox-item">
-                <input type="checkbox" name="servicos" value="Higienização Completa">
-                <span>Higienização Completa</span>
-            </label>
+            <div id="afro-target" class="cine-row row-afro">
+                <div class="cine-media">
+                    <img src="media/Alef.jpg" alt="Brooklyn Studio Afro">
+                </div>
+                <div class="cine-text-side">
+                    <div class="play-indicator"><span></span> ESTÚDIO 03 / <a href="https://www.instagram.com/brooklyn_studioafro/" target="_blank">@brooklyn_studioafro</a></div>
+                    <h2>BROOKLYN AFRO</h2>
+                    <p>De tranças nagô de impacto a fades milimétricos, cada atendimento é um compromisso com o topo do seu visual. Deixe que os especialistas cuidem do seu visual com quem entende o corre e o peso da nossa cultura.</p>
+                    <hr style="border-color: #222; margin-bottom: 25px;">
+                    <a href="https://api.whatsapp.com/send?phone=5511999999999&text=Olá!%20Estou%20no%20site%20da%20greenLab%20e%20gostaria%20de%20agendar%20um%20serviço%20de%20tranças/corte%20com%20o%20Brooklyn%20Studio%20Afro." target="_blank" class="wpp-btn btn-afro">
+                        ATENDIMENTO VIA WPP
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="parallax-footer-container" style="background-image: url('media/BarGreenLab.jpg');">
+            
+            <div class="parallax-footer-top">
+                <div class="parallax-content">
+                    <h3>O QUE FAZEMOS</h3>
+                    <p>Nós unificamos diferentes expressões e subculturas sob o mesmo teto. A greenLab faz a curadoria, a gestão de infraestrutura e a conexão cruzada das marcas, entregando para quem nos visita uma experiência urbana única de consumo, arte, estética e identidade.</p>
+                </div>
+            </div>
+
+            <hr class="footer-divider-line">
+
+            <footer class="main-footer">
+                <div class="footer-grid">
+                    <div class="footer-block">
+                        <h4>CONEXÃO //</h4>
+                        <p class="footer-info">📍 Galpão greenLab, Centro Industrial</p>
+                        <p class="footer-info">📞  (61) 982602540</p>
+                        <div class="footer-hours">
+                            <h5>HORÁRIOS DE OPERAÇÃO:</h5>
+                            <p>Terça a Sábado: 8h às 18h</p>
+                            <p>Domingo: 09h às 13h</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-block">
+                        <h4>A BANCA //</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://www.instagram.com/greenlabcomplexo/" target="_blank">@greenlabcomplexo</a></li>
+                            <li><a href="https://www.instagram.com/damasio.estetica/" target="_blank">@damasio.estetica</a></li>
+                            <li><a href="https://www.instagram.com/tatuadesson/" target="_blank">@tatuadesson</a></li>
+                            <li><a href="https://www.instagram.com/brooklyn_studioafro/" target="_blank">@brooklyn_studioafro</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-block map-block">
+                        <h4>LOCALIZAÇÃO //</h4>
+                        <div class="map-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.811629857802!2d-48.093133999999985!3d-15.813883499999983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcd1c52263d67%3A0x673c63d5e11bfb43!2sDam%C3%A1sio%20Est%C3%A9tica%20e%20Lavagem%20de%20Ve%C3%ADculos!5e0!3m2!1spt-BR!2sbr!4v1782403006791!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>© 2026 greenLab Complexo. Todos os direitos reservados. Projetado na Cultura de Rua.</p>
+                </div>
+            </footer>
         </div>
-    </div>
 
-    <textarea id="message" placeholder="Mensagem ou observações adicionais..."></textarea>
-    <button type="submit" class="btn">Enviar Solicitação</button>
-</form>
-        </div>
-    </section>
+    </main>
 
-    <footer>
-    <div class="social-links" style="margin-bottom: 15px;">
-        <a href="https://www.instagram.com/damasio.estetica/" target="_blank" style="color: #D7A335; text-decoration: none; margin: 0 10px; font-weight: bold;">Instagram</a>
-        <a href="#contato" style="color: #fff; text-decoration: none; margin: 0 10px;">Contato</a>
+    <script src="main.js"></script>
+
+    <!-- BOTÕES FLUTUANTES FIXOS (WHATSAPP E INSTAGRAM) -->
+    <div class="social-floating-container">
+        <!-- Botão do Instagram -->
+        <a href="https://www.instagram.com/greenlabcomplexo/" target="_blank" class="floating-btn btn-float-instagram" title="Siga nosso Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        
+        <!-- Botão do WhatsApp Geral -->
+        <a href="https://api.whatsapp.com/send?phone=5561982602540&text=Olá!%20Gostaria%20de%20informações%20sobre%20o%20galpão%20greenLab." target="_blank" class="floating-btn btn-float-whatsapp" title="Fale com a greenLab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </a>
     </div>
-    <p>© 2026 Damásio Estética Automotiva. Todos os direitos reservados.</p>
-</footer>
-    
-    <script src="Scripts/index.js"></script>
 </body>
 </html>

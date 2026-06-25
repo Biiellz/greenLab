@@ -1,0 +1,399 @@
+/* RESET & BASICS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    background-color: #08090a;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.85)), url('media/BackGround.png');
+    background-repeat: repeat;
+    background-size: 250px auto;
+    background-attachment: scroll;
+    color: #00ff66; 
+    font-family: 'Space Grotesk', sans-serif; 
+    overflow-x: hidden;
+    margin-left: 120px; 
+    margin-right: 120px; 
+    position: relative; 
+}
+
+/* CONTAINER CENTRAL */
+.site-container {
+    background-color: #08090a;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+/* BARRAS LATERAIS FIXAS */
+.greenlab-sidebar {
+    position: fixed;
+    top: 0;
+    width: 120px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    z-index: 9999;
+    background: transparent;
+}
+.sidebar-left { left: 0; border-right: 4px solid #00ff66; }
+.sidebar-right { right: 0; border-left: 4px solid #00ff66; }
+
+.sidebar-logo, .sidebar-logo-invert {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #00ff66;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.sidebar-left .sidebar-logo { transform: rotate(-90deg); }
+.sidebar-right .sidebar-logo-invert { transform: rotate(90deg); }
+
+.sidebar-tag {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    color: #00ff66;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    opacity: 0.4;
+}
+.sidebar-tag-invert {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+    color: #00ff66;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    opacity: 0.4;
+}
+
+/* QUADROS FLUTUANTES (INVADINDO SEM ATRAPALHAR TEXTOS) */
+.floating-frame {
+    position: absolute;
+    border: 4px solid #00ff66;
+    background: #000;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.8);
+    overflow: hidden;
+    pointer-events: none; /* Garante que cliques passem direto por eles */
+    z-index: 100000;
+}
+.floating-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) contrast(120%); }
+
+/* Posicionamentos ajustados para segurança contra quebras */
+.frame-1 { width: 200px; height: 260px; left: -80px; top: 400px; transform: rotate(-5deg); }
+.frame-2 { width: 220px; height: 220px; right: -80px; top: 600px; transform: rotate(4deg); }
+.frame-3 { width: 180px; height: 230px; left: -70px; top: 1000px; transform: rotate(-7deg); border-color: #f1c40f; }
+.frame-4 { width: 220px; height: 220px; right: -90px; top: 1700px; transform: rotate(10deg); border-color: #f1c40f; }
+.frame-5 { width: 220px; height: 220px; left: -80px; top: 2800px; transform: rotate(-7deg); border-color: #e74c3c; }
+
+/* PARALLAX */
+.parallax-section, .parallax-footer-container {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 20;
+    border-top: 4px solid #00ff66;
+    border-bottom: 4px solid #00ff66;
+}
+.parallax-section {
+    min-height: 50vh;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.parallax-section::before, .parallax-footer-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    z-index: 1;
+}
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+.parallax-content h3 { font-family: 'Permanent Marker', cursive; font-size: clamp(2rem, 5vw, 3.5rem); color: #00ff66; margin-bottom: 15px; letter-spacing: 2px; }
+.parallax-content p { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1rem, 2.5vw, 1.3rem); line-height: 1.6; font-weight: bold; color: #fff; }
+
+.parallax-footer-top {
+    padding: 80px 20px 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-divider-line {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 20px auto 40px auto;
+    border: none;
+    border-top: 3px groove #00ff66;
+    opacity: 0.7;
+}
+
+/* CONCEITO 4: PAINEL SUPERIOR */
+#conceito4 { 
+    min-height: 100vh;
+    padding: 80px 20px;
+    background: #08090a; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+    z-index: 10;
+}
+.control-panel { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 40px; z-index: 10; width: 100%; max-width: 950px; }
+
+.mood-btn-link { 
+    display: inline-block;
+    padding: 12px 24px; 
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    text-decoration: none; 
+    background: #111; 
+    color: #fff; 
+    border: 3px solid #fff; 
+    cursor: pointer; 
+    transition: 0.3s;
+    box-shadow: 4px 4px 0px #00ff66;
+    text-align: center;
+}
+.mood-btn-link:hover { transform: translate(-2px, -2px); color: #00ff66; box-shadow: 6px 6px 0px #fff; }
+
+.dynamic-showcase { 
+    width: 100%; 
+    max-width: 950px; 
+    display: flex; 
+    background: #000; 
+    border: 4px solid #fff; 
+    overflow: hidden; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8); 
+    z-index: 10; 
+}
+.ds-img { width: 50%; min-height: 380px; background: #222; border-right: 4px solid #fff; }
+.ds-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ds-content { width: 50%; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+.ds-content h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 15px; text-transform: uppercase; color: #00ff66; }
+.ds-content p { color: #aaa; line-height: 1.6; font-size: 1.05rem; }
+
+/* CONCEITO 3: ESTÚDIOS */
+#conceito3 { 
+    background: #08090a;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px; 
+    z-index: 10;
+    position: relative;
+}
+.cine-row { 
+    display: flex; 
+    min-height: 80vh; /* Mudado de height fixo para flexível */
+    height: auto;
+    width: 100%; 
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #0e1013;
+    border: 4px solid #fff; 
+    position: relative; 
+    overflow: hidden; 
+}
+.cine-media { width: 52%; position: relative; background: #151515; border-right: 4px solid #fff; }
+.cine-media img, .cine-media video { width: 100%; height: 100%; object-fit: cover; opacity: 0.75; display: block; }
+.cine-media::before { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(90deg, transparent, #000); z-index: 2; }
+
+.cine-text-side { width: 48%; background: #000; display: flex; flex-direction: column; justify-content: center; padding: 40px 5%; z-index: 3; }
+.cine-text-side h2 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; text-transform: uppercase; margin-bottom: 20px; line-height: 1.1; word-wrap: break-word; }
+.cine-text-side h2 span { font-size: 1.2rem; font-family: 'Space Grotesk', sans-serif; font-weight: 400; display: block; color: #888; text-transform: none; margin-top: 5px; }
+.cine-text-side p { color: #999; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px; }
+
+.play-indicator { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; font-family: 'Permanent Marker', cursive; letter-spacing: 1px; color: #666; margin-bottom: 15px; }
+.play-indicator a { color: #00ff66; text-decoration: none; }
+.play-indicator a:hover { text-decoration: underline; }
+.play-indicator span { display: inline-block; width: 10px; height: 10px; background: #00ff66; border-radius: 50%; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* BOTÕES DO WHATSAPP */
+.wpp-btn {
+    display: inline-block;
+    padding: 16px 20px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    border: 3px solid #fff;
+    transition: 0.2s;
+    width: 100%;
+}
+.wpp-btn:hover { transform: scale(1.02); background: #fff; color: #000; }
+
+.row-damasio { 
+    border-color: #d4af37 !important;
+}
+.row-damasio h2 { color: #d4af37; }
+.btn-damasio { color: #d4af37; border-color: #d4af37; }
+.btn-damasio:hover { background: #d4af37 !important; color: #000; }
+
+.row-yellowink { border-color: #d4af37 !important;}
+.row-yellowink h2 { color: #f1c40f; }
+.btn-yellowink { color: #f1c40f; border-color: #f1c40f; }
+.btn-yellowink:hover { background: #f1c40f !important; color: #000; }
+
+.row-afro {border-color: #e74c3c;}
+.row-afro h2 { color: #e74c3c; }
+.btn-afro { color: #e74c3c; border-color: #e74c3c; }
+.btn-afro:hover { background: #e74c3c !important; color: #fff; }
+
+/* FOOTER */
+.main-footer {
+    background: transparent; 
+    padding: 0 40px 40px 40px;
+    z-index: 10;
+    position: relative;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.footer-block h4 {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #00ff66;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+.footer-info { font-size: 1rem; color: #eee; margin-bottom: 12px; }
+.footer-hours { margin-top: 20px; border-left: 2px solid #00ff66; padding-left: 15px; }
+.footer-hours h5 { font-size: 0.85rem; letter-spacing: 1px; color: #fff; margin-bottom: 5px; }
+.footer-hours p { font-size: 0.9rem; color: #ccc; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { font-family: 'Permanent Marker', cursive; font-size: 1.2rem; color: #fff; text-decoration: none; transition: 0.2s; }
+.footer-links a:hover { color: #00ff66; padding-left: 5px; }
+
+.map-wrapper {
+    width: 100%;
+    height: 200px;
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 0px #00ff66;
+    filter: grayscale(100%) invert(90%) contrast(120%); 
+    transition: 0.3s;
+}
+.map-wrapper:hover { filter: grayscale(0%) invert(0%) contrast(100%); }
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* CONTAINER DOS BOTÕES FLUTUANTES COM Z-INDEX ALTO */
+.social-floating-container {
+    position: fixed;
+    bottom: 30px;
+    right: 150px; /* Alinhado para não bater nas barras fixas de 120px das laterais */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100005; /* Fica acima de tudo, inclusive dos quadros */
+}
+
+/* ESTILO BASE DO BOTÃO FLUTUANTE BRUTALISTA */
+.floating-btn {
+    width: 60px;
+    height: 60px;
+    border: 3px solid #fff;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, color 0.2s;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.8);
+    text-decoration: none;
+}
+
+.floating-btn svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Customização do botão do Instagram */
+.btn-float-instagram {
+    border-color: #fff;
+}
+.btn-float-instagram:hover {
+    color: #f1c40f; /* Brilha amarelo no hover seguindo a paleta */
+    border-color: #f1c40f;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #fff;
+}
+
+/* Customização do botão do WhatsApp */
+.btn-float-whatsapp {
+    border-color: #00ff66;
+    color: #00ff66;
+}
+.btn-float-whatsapp:hover {
+    color: #000;
+    background-color: #00ff66; /* Inverte a cor no hover */
+    border-color: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #fff;
+}
+
+/* AJUSTE PARA TELA DO CELULAR */
+@media (max-width: 1024px) {
+    .social-floating-container {
+        right: 20px; /* Como as barras laterais somem no celular, ele cola no canto da tela */
+        bottom: 20px;
+    }
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+    }
+    .floating-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* RESPONSIVIDADE COMPLETA */
+@media (max-width: 1024px) {
+    body { margin-left: 0; margin-right: 0; }
+    .site-container { border-left: none; border-right: none; }
+    .greenlab-sidebar, .floating-frame { display: none !important; }
+    
+    .control-panel { flex-direction: column; align-items: stretch; padding: 0 10px; }
+    .mood-btn-link { width: 100%; }
+
+    .dynamic-showcase, .cine-row { flex-direction: column; height: auto; min-height: auto; }
+    .ds-img, .cine-media { width: 100%; min-height: 300px; height: 300px; border-right: none; border-bottom: 4px solid #fff; }
+    .ds-content, .cine-text-side { width: 100%; height: auto; padding: 35px 20px; }
+    
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .parallax-section, .parallax-footer-container { background-attachment: scroll; height: auto; padding: 80px 0; }
+    .main-footer { padding: 20px; }
+}
