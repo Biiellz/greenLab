@@ -387,12 +387,12 @@ p, .ds-content p, .cine-text-side p, .footer-info, .footer-hours p, .footer-bott
     }
     .frame-2 { 
         right: 10px !important; 
-        top: 950px !important; 
+        top: 912px !important; 
         transform: rotate(5deg) !important; 
     }
     .frame-3 { 
         left: 10px !important; 
-        top: 1350px !important; 
+        top: 1250px !important; 
         transform: rotate(-8deg) !important; 
     }
     .frame-4 { 
@@ -402,7 +402,7 @@ p, .ds-content p, .cine-text-side p, .footer-info, .footer-hours p, .footer-bott
     }
     .frame-5 { 
         left: 7px !important;  
-        top: 3390px !important; 
+        top: 3500px !important; 
         transform: rotate(-4deg) !important; 
     }
 }
