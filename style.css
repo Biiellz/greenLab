@@ -375,43 +375,46 @@ p, .ds-content p, .cine-text-side p, .footer-info, .footer-hours p, .footer-bott
         position: relative !important;
     }
 
-    /* 2. ESTILO MÓVEL GERAL DOS QUADROS */
+    /* OCULTA OS DECORATIVOS GLOBAIS QUE NÃO ESTÃO ANCORADOS NOS ESTÚDIOS */
+    .frame-1, .frame-2 { display: none !important; }
+
+    /* 2. ESTILO MÓVEL DOS QUADROS ANCORADOS */
     .floating-frame {
         position: absolute !important;
         display: block !important;
-        width: 100px !important;       /* Tamanho compacto ideal para o mobile */
-        height: 130px !important;
+        width: 95px !important;        /* Tamanho cirúrgico para não cobrir o texto no mobile */
+        height: 125px !important;
         box-shadow: 4px 4px 0px rgba(0,0,0,0.8) !important;
         border-width: 3px !important;
-        z-index: 999 !important;       /* Fica flutuando acima de tudo */
-    }
+        z-index: 999 !important;       /* Garante que fiquem flutuando acima da linha da borda */
     }
 
-    /* Posições milimétricas para as fotos "invadirem" as bordas das telas pequenas: */
-    .frame-1 { 
-        left: 10px !important; 
-        top: 300px !important; 
-        transform: rotate(-6deg) !important; 
-    }
-    .frame-2 { 
-        right: 10px !important; 
-        top: 912px !important; 
-        transform: rotate(5deg) !important; 
-    }
+    /* 3. REVEZAMENTO NAS QUINAS EXTRAPOLANDO OS ESTÚDIOS */
+    
+    /* DAMASIO: Quina Superior Esquerda */
     .frame-3 { 
-        left: -30px !important;       /* Extrapola a borda esquerda do bloco Damasio */
-        top: -40px !important;        /* Flutua subindo para cima da linha do bloco */
-        transform: rotate(-10deg) !important; /* Inclinação estilizada */
+        left: -35px !important;       /* Joga metade da foto para fora da tela na esquerda */
+        top: -35px !important;        /* Sobe metade da foto para fora do topo do bloco */
+        right: auto !important;
+        transform: rotate(-12deg) !important; 
+        border-color: #d4af37 !important;
     }
     
+    /* YELLOW.INK: Quina Superior Direita */
     .frame-4 { 
-        right: -30px !important;      /* Extrapola a borda direita do bloco da Yellow */
-        top: 120px !important;        /* Fica flutuando no meio da lateral da caixa */
-        transform: rotate(8deg) !important; 
+        right: -35px !important;      /* Joga metade da foto para fora da tela na direita */
+        top: -35px !important;        /* Sobe metade da foto para fora do topo do bloco */
+        left: auto !important;
+        transform: rotate(10deg) !important; 
+        border-color: #f1c40f !important;
     }
     
+    /* BROOKLYN AFRO: Quina Superior Esquerda */
     .frame-5 { 
-        left: -25px !important;       /* Extrapola a borda esquerda do bloco Brooklyn Afro */
-        top: -30px !important;        /* Flutua invadindo a parte superior */
-        transform: rotate(-6deg) !important;
+        left: -30px !important;       /* Joga metade da foto para fora da tela na esquerda */
+        top: -35px !important;        /* Sobe metade da foto para fora do topo do bloco */
+        right: auto !important;
+        transform: rotate(-8deg) !important; 
+        border-color: #e74c3c !important;
+    }
 }
