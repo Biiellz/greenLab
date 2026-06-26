@@ -396,8 +396,8 @@ p, .ds-content p, .cine-text-side p, .footer-info, .footer-hours p, .footer-bott
     
     /* MURAL DO GALPÃO: Quina Superior Esquerda */
     .frame-1 {
-        left: 0px !important;
-        top: 0px !important;
+        left: 5px !important;
+        top: 5px !important;
         right: auto !important;
         transform: rotate(-6deg) !important;
         border-color: #00ff66 !important;
@@ -406,9 +406,9 @@ p, .ds-content p, .cine-text-side p, .footer-info, .footer-hours p, .footer-bott
     /* QUEM SOMOS: Quina Superior Direita */
     .frame-2 {
         right: 0px !important;
-        top: 0px !important;
+        top: -10px !important;
         left: auto !important;
-        transform: rotate(8deg) !important;
+        transform: rotate(2deg) !important;
         border-color: #00ff66 !important;
     }
     
@@ -426,7 +426,7 @@ p, .ds-content p, .cine-text-side p, .footer-info, .footer-hours p, .footer-bott
         right: -35px !important;      
         top: -35px !important;        
         left: auto !important;
-        transform: rotate(10deg) !important; 
+        transform: rotate(0deg) !important; 
         border-color: #f1c40f !important;
     }
     
