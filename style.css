@@ -375,26 +375,47 @@ p, .ds-content p, .cine-text-side p, .footer-info, .footer-hours p, .footer-bott
         position: relative !important;
     }
 
-    /* OCULTA OS DECORATIVOS GLOBAIS QUE NÃO ESTÃO ANCORADOS NOS ESTÚDIOS */
-    .frame-1, .frame-2 { display: none !important; }
+    /* LIBERA AS BORDAS PARA OS QUADROS VAZAREM */
+    #conceito4, .parallax-section, .cine-row {
+        overflow: visible !important;
+        position: relative !important;
+    }
 
-    /* 2. ESTILO MÓVEL DOS QUADROS ANCORADOS */
+    /* ESTILO MÓVEL DOS QUADROS */
     .floating-frame {
         position: absolute !important;
         display: block !important;
-        width: 95px !important;        /* Tamanho cirúrgico para não cobrir o texto no mobile */
+        width: 95px !important;        
         height: 125px !important;
         box-shadow: 4px 4px 0px rgba(0,0,0,0.8) !important;
         border-width: 3px !important;
-        z-index: 999 !important;       /* Garante que fiquem flutuando acima da linha da borda */
+        z-index: 999 !important;       
     }
 
-    /* 3. REVEZAMENTO NAS QUINAS EXTRAPOLANDO OS ESTÚDIOS */
+    /* REVEZAMENTO NAS QUINAS EXTRAPOLANDO AS SEÇÕES */
+    
+    /* MURAL DO GALPÃO: Quina Superior Esquerda */
+    .frame-1 {
+        left: 0px !important;
+        top: 0px !important;
+        right: auto !important;
+        transform: rotate(-6deg) !important;
+        border-color: #00ff66 !important;
+    }
+
+    /* QUEM SOMOS: Quina Superior Direita */
+    .frame-2 {
+        right: 0px !important;
+        top: 0px !important;
+        left: auto !important;
+        transform: rotate(8deg) !important;
+        border-color: #00ff66 !important;
+    }
     
     /* DAMASIO: Quina Superior Esquerda */
     .frame-3 { 
-        left: -35px !important;       /* Joga metade da foto para fora da tela na esquerda */
-        top: -35px !important;        /* Sobe metade da foto para fora do topo do bloco */
+        left: -35px !important;       
+        top: -35px !important;        
         right: auto !important;
         transform: rotate(-12deg) !important; 
         border-color: #d4af37 !important;
@@ -402,8 +423,8 @@ p, .ds-content p, .cine-text-side p, .footer-info, .footer-hours p, .footer-bott
     
     /* YELLOW.INK: Quina Superior Direita */
     .frame-4 { 
-        right: -35px !important;      /* Joga metade da foto para fora da tela na direita */
-        top: -35px !important;        /* Sobe metade da foto para fora do topo do bloco */
+        right: -35px !important;      
+        top: -35px !important;        
         left: auto !important;
         transform: rotate(10deg) !important; 
         border-color: #f1c40f !important;
@@ -411,8 +432,8 @@ p, .ds-content p, .cine-text-side p, .footer-info, .footer-hours p, .footer-bott
     
     /* BROOKLYN AFRO: Quina Superior Esquerda */
     .frame-5 { 
-        left: -30px !important;       /* Joga metade da foto para fora da tela na esquerda */
-        top: -35px !important;        /* Sobe metade da foto para fora do topo do bloco */
+        left: -30px !important;       
+        top: -35px !important;        
         right: auto !important;
         transform: rotate(-8deg) !important; 
         border-color: #e74c3c !important;
